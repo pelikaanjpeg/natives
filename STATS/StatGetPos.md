@@ -5,15 +5,15 @@ ns: STATS
 
 ```c
 // 0x350F82CCB186AA1B 0xC846ECCE
-BOOL STAT_GET_POS(Any p0, Any* p1, Any* p2, Any* p3, Any p4);
+BOOL STAT_GET_POS(Hash statName, float* x, float* y, float* z, Any p4);
 ```
 
 
 ## Parameters
-* **p0**: 
-* **p1**: 
-* **p2**: 
-* **p3**: 
+* **statName**: 
+* **x**: 
+* **y**: 
+* **z**: 
 * **p4**: 
 
 ## Return value
