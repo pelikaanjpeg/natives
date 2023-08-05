@@ -18,6 +18,7 @@ jobs:
           node-version: '12' # while 14+ technically works, it's 25-50x slower at running native-doc-tooling
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
+        if: secrets.NATIVE_DEPLOY_KEY
         with:
           key: ${{ secrets.NATIVE_DEPLOY_KEY }}
           known_hosts: ${{ secrets.NATIVE_DEPLOY_KNOWN_HOSTS }}
@@ -33,6 +34,7 @@ jobs:
           bash ./.ci/setup-builder
           bash ./.ci/run-deploy
       - name: Deploy
+        if: secrets.NATIVE_DEPLOY_KEY
         env:
           NATIVE_DEPLOY_URL: ${{ secrets.NATIVE_DEPLOY_URL }}
         run: |
