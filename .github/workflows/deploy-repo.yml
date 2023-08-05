@@ -38,5 +38,5 @@ jobs:
         env:
           NATIVE_DEPLOY_URL: ${{ secrets.NATIVE_DEPLOY_URL }}
         run: |
-          rsync -rq --delete-after --exclude=*compat.lua* ./out/ $NATIVE_DEPLOY_URL
-          rsync -rqb --backup-dir=./ --suffix=.bak --include=*compat.lua --exclude=* ./out/ $NATIVE_DEPLOY_URL
+          rsync -rq --delete-after --exclude=*compat.lua* -e 'ssh -p 10865' ./out/ $NATIVE_DEPLOY_URL
+          rsync -rqb --backup-dir=./ --suffix=.bak -e 'ssh -p 10865' --include=*compat.lua --exclude=* ./out/ $NATIVE_DEPLOY_URL
