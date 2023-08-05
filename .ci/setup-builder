@@ -8,8 +8,7 @@ set -eu
 rm /usr/lib/x86_64-linux-gnu/libclang.so
 sudo ln -s libclang-10.so.1 /usr/lib/x86_64-linux-gnu/libclang.so
 
-echo "$BUILDER_ROOT"
-
+rm -R $BUILDER_ROOT
 mkdir -p $BUILDER_ROOT
 cd $BUILDER_ROOT
 
