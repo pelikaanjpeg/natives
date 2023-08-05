@@ -5,7 +5,7 @@ set -eu
 # include common script
 . "$(dirname "$BASH_SOURCE")"/common.sh
 
-apt install libclang-10-dev
+sudo apt-get install libclang-10-dev
 
 rm /usr/lib/x86_64-linux-gnu/libclang.so
 sudo ln -s libclang-10.so.1 /usr/lib/x86_64-linux-gnu/libclang.so
