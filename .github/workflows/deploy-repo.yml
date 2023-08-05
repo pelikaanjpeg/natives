@@ -26,7 +26,8 @@ jobs:
           NATIVE_DEPLOY_URL: ${{ secrets.NATIVE_DEPLOY_URL }}
         run: |
           mkdir ./in
-          rsync -q --ignore-missing-args $NATIVE_DEPLOY_URL/natives_global_client_compat.lua ./in/natives_global_client_compat.lua
+          cd in
+          wget https://runtime.fivem.net/doc/natives_global_client_compat.lua
       - name: Run build
         run: |
           set -xe
